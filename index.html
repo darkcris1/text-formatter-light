@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Text Formatter Light</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma-rtl.min.css">
+</head>
+<body>
+	<nav class="navbar" role="navigation" aria-label="main navigation">
+		<div class="navbar-brand">
+			<a class="navbar-item" href="https://bulma.io">
+				Text-formatter-light
+			</a>
+		</div>
+
+	</nav>
+	<section class="section">
+		<div class="container">
+			<h1 class="title">
+				Hello World
+			</h1>
+			<div class="field">
+				<label class="label">Input</label>
+				<div class="control">
+					<input type="text" class="input" id="test-input" />
+					
+				</div>
+			</div>
+			<div class="field">
+				<label class="label">Format</label>
+				<div class="control">
+					<input value="(xxx) - (xxxxx)" type="text" class="input" id="format" />
+				</div>
+			</div>
+			
+			<div class="field">
+				<label class="label">Result</label>
+				<div class="control">
+					<input readonly disabled type="text" class="input" id="result" />
+				</div>
+			</div>
+			
+	
+			
+		
+		</div>
+	</section>
+	<script type="module">
+		import textFormat from "./index.js";
+		const testInput = document.getElementById('test-input');
+		const result = document.getElementById('result');
+		const format = document.getElementById('format');
+		
+		const dropdownLink = document.getElementById('dropdown-links');
+		
+		testInput.oninput = function(e) {
+			result.value = textFormat(this.value, format.value);
+			
+		}
+		document.addEventListener('DOMContentLoaded', () => {
+
+			// Get all "navbar-burger" elements
+			const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+			// Check if there are any navbar burgers
+			if ($navbarBurgers.length > 0) {
+
+				// Add a click event on each of them
+				$navbarBurgers.forEach(el => {
+					el.addEventListener('click', () => {
+
+						// Get the target from the "data-target" attribute
+						const target = el.dataset.target;
+						const $target = document.getElementById(target);
+
+						// Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+						el.classList.toggle('is-active');
+						$target.classList.toggle('is-active');
+
+					});
+				});
+			}
+
+		});
+	</script>
+</body>
+</html>

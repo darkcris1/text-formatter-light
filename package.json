@@ -1,0 +1,12 @@
+{
+  "name": "text-formatter-light",
+  "version": "1.0.0",
+  "description": "Format your text fast and lightweightly",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Cris Fandiño Jr. <sircnujnuj@gmail.com>",
+  "license": "ISC"
+}
